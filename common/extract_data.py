@@ -23,7 +23,7 @@ def extract_data(data_dir):
     zip_ref.close()
 
     # load the data from Excel file
-    data = pd.read_excel(os.path.join(data_dir, 'GEFCom2014-E', 'GEFCom2014-E.xlsx'), parse_date='Date')
+    data = pd.read_excel(os.path.join(data_dir, 'GEFCom2014-E', 'GEFCom2014-E.xlsx'))
 
     # create timestamp variable from Date and Hour
     data['timestamp'] = data['Date'].add(pd.to_timedelta(data.Hour - 1, unit='h'))
